@@ -2,7 +2,7 @@
 #include "Arduino.h"
 #include "SPI.h"
 
-ADS119X::ADS119X(byte dataReady_Pin, byte reset_Pin, byte cs_Pin)
+ADS119X::ADS119X(byte dataReady_Pin, byte reset_Pin, byte cs_Pin, byte clk, byte miso, byte mosi)
 {
   // pins 
   _drdy_pin = dataReady_Pin;
@@ -17,7 +17,7 @@ ADS119X::ADS119X(byte dataReady_Pin, byte reset_Pin, byte cs_Pin)
   pinMode(_cs_pin, OUTPUT);
   
   // Start SPI
-  SPI.begin();
+  SPI.begin(clk, miso, mosi);
   SPI.beginTransaction( SPISettings(100000, MSBFIRST, SPI_MODE1));
   
 }

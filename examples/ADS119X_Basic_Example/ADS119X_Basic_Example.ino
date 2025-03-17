@@ -39,8 +39,11 @@ so you can se it in the serial  monitor or in the serial plotter
 byte dataReady_Pin = 6;
 byte reset_pin = 5;
 byte cs_pin = 10 ; 
+byte clk_pin = 6;
+byte miso_pin = 2; 
+byte mosi_pin = 7;
 
-ADS119X adc(dataReady_Pin,reset_pin , cs_pin);
+ADS119X adc(dataReady_Pin,reset_pin , cs_pin, clk_pin, miso_pin, mosi_pin);
 
 // variables
 bool dataReady = 0;

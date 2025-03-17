@@ -176,7 +176,7 @@
 
 class ADS119X {
  public:
-  ADS119X(byte dataReady_Pin, byte reset_Pin, byte cs_Pin);  
+  ADS119X(byte dataReady_Pin, byte reset_Pin, byte cs_Pin, byte clk, byte miso, byte mosi); 
   boolean begin();    
 
   void sendCommand(unsigned char cmd);
